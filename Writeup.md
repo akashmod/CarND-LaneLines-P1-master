@@ -8,19 +8,19 @@ The goal of this project is to make a pipeline that finds lane lines on the road
 The description of the pipeline used.
 
 My pipeline consisted of 5 steps. 1. I converted the images to grayscale, 2. then I used gaussian blur to blur the grayscale images to reduce the image noise. The gaussian blur kernel size of 5 was used as it has shown to provide good results before and is a standard number used in the industry. 3. Next, canny transformation was used to identify the edges. The low threshold of 50 and high threshold of 150 was used in the canny transformation as it has shown to provide good results in the past. 4. Following the canny transformation, the region of interest was selected by defining the mask. The vertical co-ordinate of 320 was used to define the upper limit of the area of interest. 5. Next comes drawing the houghlines in the image. The minimum line length was kept as 5 and the maximum line gap was kept at 1. The two images are then joined, i.e. the original camera image and the lines identified by pipeline in a weighted form and the output was saved.
-![solidWhiteCurve1.jpg](https://github.com/akashmod/Self_Driving_Cars-LaneLine_Detection/blob/master/test_images/solidWhiteCurve.jpg)
-![solidWhiteRight1.jpg](Self_Driving_Cars-LaneLine_Detection/test_images/solidWhiteRight.jpg)
-![solidYellowCurve1.jpg](Self_Driving_Cars-LaneLine_Detection/test_images/solidYellowCurve.jpg)
-![solidYellowLeft1.jpg](Self_Driving_Cars-LaneLine_Detection/test_images/solidYellowLeft.jpg)
-![whiteCarLaneSwitch1.jpg](Self_Driving_Cars-LaneLine_Detection/test_images/whiteCarLaneSwitch.jpg)
+![solidWhiteCurve1.jpg](https://github.com/akashmod/Self_Driving_Cars-LaneLine_Detection/blob/master/test_images_output/solidWhiteCurve1.jpg)
+![solidWhiteRight1.jpg](https://github.com/akashmod/Self_Driving_Cars-LaneLine_Detection/blob/master/test_images_output/solidWhiteRight1.jpg)
+![solidYellowCurve1.jpg](https://github.com/akashmod/Self_Driving_Cars-LaneLine_Detection/blob/master/test_images_output/solidYellowCurve1.jpg)
+![solidYellowLeft1.jpg](https://github.com/akashmod/Self_Driving_Cars-LaneLine_Detection/blob/master/test_images_output/solidYellowLeft1.jpg)
+![whiteCarLaneSwitch1.jpg](https://github.com/akashmod/Self_Driving_Cars-LaneLine_Detection/blob/master/test_images_output/whiteCarLaneSwitch1.jpg)
 
 In order to draw a single line on the left and right lanes, I created the draw_lines() function in the code such that it performs the following functions: First it segregates the lines into the left and the right lanes. The lines with positive slope are right lanes, since the y-co-ordinate increasing as we go down as opposed to the general trend and vice versa with the left lanes. Once the lines are segregated, we convert the lines identified by the hough transform in the two point form into the slope-intercept form. This gives better handling of the data as now we are using properties of the lines rather than points. We also calculate the lengths of the lines. Now, we take the weighted average of the line properties, i.e. the slope and the intercept along the entire left lane and right lane arrays to get the average line properties in both the cases. However, it has to be weighted average in terms of length, to reduce the effect of line noise in the average calculation. Now that we have the line properties, i.e. the slope and intercept of the line, we use it to calculate the x-co-ordinates of the points in the lowest y-co-ordinate and highest y-co-ordinates of the left and the right lanes and join them together to get the lane lines.
 
-![solidWhiteCurve.jpg](Self_Driving_Cars-LaneLine_Detection/test_images_output/solidWhiteCurve.jpg)
-![solidWhiteRight.jpg](Self_Driving_Cars-LaneLine_Detection/test_images_output/solidWhiteRight.jpg)
-![solidYellowCurve.jpg](Self_Driving_Cars-LaneLine_Detection/test_images_output/solidYellowCurve.jpg)
-![solidYellowLeft.jpg](Self_Driving_Cars-LaneLine_Detection/test_images_output/solidYellowLeft.jpg)
-![whiteCarLaneSwitch.jpg](Self_Driving_Cars-LaneLine_Detection/test_images_output/whiteCarLaneSwitch.jpg)
+![solidWhiteCurve.jpg](https://github.com/akashmod/Self_Driving_Cars-LaneLine_Detection/blob/master/test_images_output/solidWhiteCurve.jpg)
+![solidWhiteRight.jpg](https://github.com/akashmod/Self_Driving_Cars-LaneLine_Detection/blob/master/test_images_output/solidWhiteRight.jpg)
+![solidYellowCurve.jpg](https://github.com/akashmod/Self_Driving_Cars-LaneLine_Detection/blob/master/test_images_output/solidYellowCurve.jpg)
+![solidYellowLeft.jpg](https://github.com/akashmod/Self_Driving_Cars-LaneLine_Detection/blob/master/test_images_output/solidYellowLeft.jpg)
+![whiteCarLaneSwitch.jpg](https://github.com/akashmod/Self_Driving_Cars-LaneLine_Detection/blob/master/test_images_output/whiteCarLaneSwitch.jpg)
 
 Potential shortcomings with the current pipeline
 
