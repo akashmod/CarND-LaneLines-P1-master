@@ -22,6 +22,8 @@ In order to draw a single line on the left and right lanes, I created the draw_l
 ![solidYellowLeft.jpg](https://github.com/akashmod/Self_Driving_Cars-LaneLine_Detection/blob/master/test_images_output/solidYellowLeft.jpg)
 ![whiteCarLaneSwitch.jpg](https://github.com/akashmod/Self_Driving_Cars-LaneLine_Detection/blob/master/test_images_output/whiteCarLaneSwitch.jpg)
 
+The Pipeline was applied to a video captured by a car on a highway driving scenario and it performed satisfactorily in the detection of lane lines on the road for directing the driving of the vehicle. The processed video can be found [![here](https://github.com/akashmod/Self_Driving_Cars-LaneLine_Detection/blob/master/test_images_output/solidWhiteRight.jpg)](https://github.com/akashmod/Self_Driving_Cars-LaneLine_Detection/blob/master/test_videos_output/solidWhiteRight.mp4)
+
 Potential shortcomings with the current pipeline
 
 One potential shortcoming would be what would happen when there are cars in front of the vehicle. When there are objects around the road, the algorithm will take the outline of the object or the car in front and add them to the calculation of the average line showing the lane and hence making it really inaccurate. The algorithm only works when there are only lanes in front of the vehicle or in the area of region. As soon as there is any other object, the algorithm fails. 
