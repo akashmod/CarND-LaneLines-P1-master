@@ -11,7 +11,7 @@ When we drive, we use our eyes to decide where to go.  The lines on the road tha
 
 In this project I have detected lane lines in images using Python and OpenCV.  OpenCV means "Open-Source Computer Vision", which is a package that has many useful tools for analyzing images.  
 
-To complete the project, two files were submitted: a file containing [project code](https://github.com/udacity/CarND-LaneLines-P1/blob/master/P1.ipynb) and a file containing a brief [writeup](https://github.com/udacity/CarND-LaneLines-P1/blob/master/writeup_template.md) explaining my solution. The code file is called P1.ipynb and the writeup file is writeup.md 
+To complete the project, two files were submitted: a file containing [project code](https://github.com/akashmod/Self_Driving_Cars-LaneLine_Detection/blob/master/P1.ipynb) and a file containing a brief [writeup](https://github.com/akashmod/Self_Driving_Cars-LaneLine_Detection/blob/master/Writeup.ipynb) explaining my solution. The code file is called P1.ipynb and the writeup file is writeup.md 
 
 The project was undertaken under Udacity. The requirements for the completion of the project can be seen in the [project rubric](https://review.udacity.com/#!/rubrics/322/view)
 
